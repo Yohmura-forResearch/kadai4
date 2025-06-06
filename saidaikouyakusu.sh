@@ -16,7 +16,7 @@ saidaikouyakusu() {
 
 # 引数のチェック
 if [[ $# -ne 2 ]]; then
-	echo "エラー 必ず2つの数値を指定してください" >&2
+	echo "エラー必ず2つの数値を指定してください" >&2
 	exit 1
 fi
 
