@@ -23,11 +23,15 @@ run_error_test() {
   local input2=$2
   local description=$3
 
-  ./saidaikouyakusu.sh "$input1" "$input2" 2>/dev/null
+ 
+  # エラーメッセージをキャッチ
+  error_message=$(./saidaikouyakusu.sh "$input1" "$input2" 2>&1)
+
+  # 終了コードをチェック
   if [[ "$?" -ne 0 ]]; then
-    echo "PASS: $description (正しくエラー終了)"
+    echo "PASS: $description (期待通りエラー終了)"
   else
-    echo "FAIL: $description (期待通りにエラーが発生しなかった)" >&2
+    echo "FAIL: $description (期待通りのエラー終了にならなかった) - 出力: $error_message" >&2
     exit 1
   fi
 }
