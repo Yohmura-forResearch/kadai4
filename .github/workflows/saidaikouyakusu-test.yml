@@ -4,6 +4,9 @@ jobs:
   test-saidaikouyakusu:
     runs-on: ubuntu-latest
     steps:
+       - name: Checkout repository
+         uses: actions/checkout@v4
+
        - name: Make saidaikouyakusu.sh executable
          run: chmod +x saidaikouyakusu.sh
 
