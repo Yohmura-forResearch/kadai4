@@ -11,7 +11,4 @@ jobs:
          run: chmod +x saidaikouyakusu.sh
 
        - name: Run saidaikouyakusu-test
-         run: |
-           [[ $(./saidaikouyakusu.sh 18 24) -eq 6 ]] || exit 1
-           [[ $(./saidaikouyakusu.sh 7 13) -eq 1 ]] || exit 1
-           [[ $(./saidaikouyakusu.sh 48 180) -eq 12 ]] || exit 1
+         run: ./saidaikouyakusu-test.sh
