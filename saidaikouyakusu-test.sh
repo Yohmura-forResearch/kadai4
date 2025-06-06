@@ -28,7 +28,9 @@ run_error_test() {
   error_message=$(./saidaikouyakusu.sh "$input1" "$input2" 2>&1)
 
   # 終了コードをチェック
-  if [[ "$?" -ne 0 ]]; then
+  exit_status=$?
+
+  if [[ "$exit_status" -ne 0 ]]; then
     echo "PASS: $description (期待通りエラー終了)"
   else
     echo "FAIL: $description (期待通りのエラー終了にならなかった) - 出力: $error_message" >&2
