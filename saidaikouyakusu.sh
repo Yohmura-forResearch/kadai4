@@ -5,7 +5,7 @@ saidaikouyakusu() {
 	local a=$1
 	local b=$2
 
-	while [[$b -ne 0 ]];do
+	while [[ $b -ne 0 ]];do
 		local temp=$b
 		b=$((a % b))
 		a=$temp
