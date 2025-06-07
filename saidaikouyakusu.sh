@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "引数の数: $#"
+
 #最大公約数を求める関数
 saidaikouyakusu() {
 	local a=$1
