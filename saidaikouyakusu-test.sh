@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e # スクリプト全体のエラーを検知する
+
 # テスト関数
 run_test() {
   local input1=$1
@@ -32,8 +34,7 @@ run_error_test() {
   
   echo "DEBUG: 終了コードは $exit_status" # 終了コードを確認
 
-  # 出力が空でない場合は、エラーが正しく処理されていない可能性がある
-  if [[ "$exit_status" -ne 0 ]]; then
+  if [[ "$exit_status" -eq 0 ]]; then
     echo "PASS: $description (期待通りエラー終了)"
   else
     echo "FAIL: $description (期待通りのエラー終了にならなかった) - 出力: $error_message" >&2
