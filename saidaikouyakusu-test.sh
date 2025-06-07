@@ -30,7 +30,8 @@ run_error_test() {
   # 終了コードをチェック
   exit_status=$?
 
-  if [[ "$exit_status" -ne 0 ]]; then
+  # 出力が空でない場合は、エラーが正しく処理されていない可能性がある
+  if [[ "$exit_status" -ne 0 && -n "error_message" ]]; then
     echo "PASS: $description (期待通りエラー終了)"
   else
     echo "FAIL: $description (期待通りのエラー終了にならなかった) - 出力: $error_message" >&2
