@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "引数の数: $#"
-
 #最大公約数を求める関数
 saidaikouyakusu() {
 	local a=$1
@@ -19,7 +17,6 @@ saidaikouyakusu() {
 # 引数のチェック
 if [[ $# -ne 2 ]]; then
 	echo "エラー必ず2つの数値を指定してください" >&2
-	unset a b # 不要な変数をクリア
 	exit 1
 fi
 
