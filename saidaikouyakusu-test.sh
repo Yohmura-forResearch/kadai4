@@ -30,7 +30,7 @@ run_error_test() {
   # 終了コードをチェック
   exit_status=$?
 
-  if [[ "$exit_status" -eq 0 ]]; then
+  if [[ "$exit_status" -eq 1 ]]; then
     echo "PASS: $description (期待通りエラー終了)"
   else
     echo "FAIL: $description (期待通りのエラー終了にならなかった) - 出力: $error_message" >&2
